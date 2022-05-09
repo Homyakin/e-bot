@@ -1,12 +1,12 @@
 package ru.homyakin.ebot.service.executor;
 
 import org.springframework.stereotype.Component;
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import ru.homyakin.ebot.model.Command;
 import ru.homyakin.ebot.model.CommandType;
 import ru.homyakin.ebot.model.Result;
 import ru.homyakin.ebot.telegram.TelegramSender;
+import ru.homyakin.ebot.utils.TelegramUtils;
+import ru.homyakin.ebot.utils.TextUtils;
 
 @Component
 public class StartCommandExecutor extends CommandExecutor {
@@ -18,12 +18,7 @@ public class StartCommandExecutor extends CommandExecutor {
 
     @Override
     public Result execute(Command command) {
-        try {
-            telegramSender.execute(SendMessage.builder().text("Добро пожаловать").chatId(command.userId().toString()).build());
-        } catch (TelegramApiException e) {
-
-        }
-        return new Result.Success();
+        return telegramSender.send(TelegramUtils.createSendMessage(TextUtils.mainText(), command.userId().toString()));
     }
 
     @Override

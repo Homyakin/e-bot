@@ -1,6 +1,15 @@
 spring:
   profiles:
     active: dev
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      username: ebot
+      password: "12345"
+      authentication-database: admin
+      database: ebase
+      auto-index-creation: true
 
 telegram-bot:
   token: "stub"
