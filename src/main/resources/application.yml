@@ -14,3 +14,4 @@ spring:
 telegram-bot:
   token: "stub"
   username: "stub"
+  adminId: "stub"
