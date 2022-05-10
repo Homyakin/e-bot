@@ -13,6 +13,14 @@ public class TextUtils {
         return "Необходимо ввести название добавки после команды. Например: /request сорбат калия.";
     }
 
+    public static String successRequest() {
+        return "Запрос успешно отправлен.";
+    }
+
+    public static String errorRequest() {
+        return "При отправлении запроса произошла ошибка, попробуйте позже.";
+    }
+
     public static String notFoundAdditives() {
         return
             """
