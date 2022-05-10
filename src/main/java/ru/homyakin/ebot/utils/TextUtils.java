@@ -8,4 +8,28 @@ public class TextUtils {
     public static String tooMuchAdditives(int limit) {
         return "Вы указали слишком много элементов, возвращён результат по первым " + limit;
     }
+
+    public static String requestCommandError() {
+        return "Необходимо ввести название добавки после команды. Например: /request сорбат калия.";
+    }
+
+    public static String notFoundAdditives() {
+        return
+            """
+            По вашему запросу ничего не найдено. Если вы уверены, что в вашем запросе содержатся пищевые добавки, \
+            то вы можете запросить их с помощью команды /request и названия.
+             
+            Например: /request сорбат калия.
+            """;
+    }
+
+    public static String notAllFoundAdditives() {
+        return
+            """
+            Если вам кажется, что по вашему запросу были найдены не все пищевые добавки, \
+            то вы можете запросить их с помощью команды /request и названия.
+            
+            Например: /request сорбат калия.
+            """;
+    }
 }

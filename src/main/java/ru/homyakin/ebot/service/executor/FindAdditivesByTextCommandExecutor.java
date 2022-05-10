@@ -45,19 +45,27 @@ public class FindAdditivesByTextCommandExecutor extends CommandExecutor {
     private String createTextFromAdditives(List<Additive> additives, Set<String> names) {
         final var telegramTexts = new ArrayList<String>();
         final var size = Math.min(additives.size(), MAX_ITEMS - 1);
+        int foundNames = 0;
         for (int i = 0; i < size; ++i) {
             final var namesFromUser = new ArrayList<String>();
             for (final var name: names) {
                 if (additives.get(i).names().contains(name)) {
+                    ++foundNames;
                     namesFromUser.add(name);
                 }
             }
             telegramTexts.add(additives.get(i).toTelegramText(namesFromUser));
         }
+        var requestText = "";
+        if (names.size() > 0 && additives.size() == 0) {
+            requestText = TextUtils.notFoundAdditives();
+        } else if (foundNames < names.size()) {
+            requestText = TextUtils.notAllFoundAdditives();
+        }
         var text = "";
         if (additives.size() == MAX_ITEMS) {
             text = TextUtils.tooMuchAdditives(MAX_ITEMS - 1) + "\n\n";
         }
-        return text + CommonUtils.uniteListInString(telegramTexts);
+        return text + CommonUtils.uniteListInString(telegramTexts) + requestText;
     }
 }

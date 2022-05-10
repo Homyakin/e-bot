@@ -14,6 +14,8 @@ public class CommandParser {
         final CommandType commandType;
         if (text.startsWith("/start")) {
             commandType = CommandType.START;
+        } else if (text.startsWith("/request")) {
+            commandType = CommandType.REQUEST;
         } else {
             commandType = CommandType.FIND_ADDITIVES_BY_TEXT;
         }
