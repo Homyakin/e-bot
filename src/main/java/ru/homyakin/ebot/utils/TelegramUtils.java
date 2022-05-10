@@ -1,6 +1,7 @@
 package ru.homyakin.ebot.utils;
 
 import com.vdurmont.emoji.EmojiParser;
+import java.util.ArrayList;
 import java.util.List;
 import org.telegram.telegrambots.meta.api.methods.ParseMode;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -14,15 +15,19 @@ public class TelegramUtils {
         return update.hasMessage() && update.getMessage().isUserMessage() && update.getMessage().hasText();
     }
 
-    public static SendMessage createSendMessage(List<String> strings, String chatId) {
-        StringBuilder text = new StringBuilder();
-        for (final var string: strings) {
-            text.append(string).append("\n\n");
+    public static List<SendMessage> createSendMessages(String text, String chatId) {
+        final var messages = new ArrayList<SendMessage>();
+        for (int i = 0; i < text.length(); i += MAX_TELEGRAM_MESSAGE) {
+            messages.add(
+                createSendMessageWithMaxLength(
+                    text.substring(i, Math.min(text.length(), i + MAX_TELEGRAM_MESSAGE)), chatId
+                )
+            );
         }
-        return createSendMessage(text.toString(), chatId);
+        return messages;
     }
 
-    public static SendMessage createSendMessage(String text, String chatId) {
+    public static SendMessage createSendMessageWithMaxLength(String text, String chatId) {
         return SendMessage
             .builder()
             .chatId(chatId)

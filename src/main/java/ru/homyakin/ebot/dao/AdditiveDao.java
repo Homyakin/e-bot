@@ -1,6 +1,7 @@
 package ru.homyakin.ebot.dao;
 
 import java.util.List;
+import java.util.Set;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -15,10 +16,11 @@ public class AdditiveDao {
         this.mongoTemplate = mongoTemplate;
     }
 
-    public List<Additive> getAdditivesByName(List<String> names) {
+    public List<Additive> getAdditivesByName(Set<String> names, int limit) {
         final var query = new Query()
             .addCriteria(Criteria.where("names").in(names))
             .withHint("names")
+            .limit(limit)
             ;
         return mongoTemplate.find(query, Additive.class);
     }

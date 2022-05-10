@@ -4,6 +4,8 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class CommonUtils {
     public static String getStringStackTrace(Throwable throwable) {
@@ -12,11 +14,19 @@ public class CommonUtils {
         return sw.toString();
     }
 
-    public static List<String> splitTextByDelimiters(String text) {
-        return Arrays.stream(text.split(":|,|\\.|\\(|\\)|;"))
+    public static Set<String> splitTextByDelimiters(String text) {
+        return Arrays.stream(text.split(":|,|\\.|\\(|\\)|;|\n"))
             .filter(it -> !it.isBlank())
             .map(String::toLowerCase)
             .map(String::trim)
-            .toList();
+            .collect(Collectors.toSet());
+    }
+
+    public static String uniteListInString(List<String> strings) {
+        StringBuilder text = new StringBuilder();
+        for (final var string: strings) {
+            text.append(string).append("\n\n");
+        }
+        return text.toString();
     }
 }

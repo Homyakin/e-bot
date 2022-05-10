@@ -18,7 +18,9 @@ public class StartCommandExecutor extends CommandExecutor {
 
     @Override
     public Result execute(Command command) {
-        return telegramSender.send(TelegramUtils.createSendMessage(TextUtils.mainText(), command.userId().toString()));
+        return telegramSender.send(
+            TelegramUtils.createSendMessageWithMaxLength(TextUtils.mainText(), command.userId().toString())
+        );
     }
 
     @Override

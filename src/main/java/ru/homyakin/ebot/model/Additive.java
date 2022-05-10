@@ -17,8 +17,13 @@ public record Additive(
     String negatives,
     List<Source> sources
 ) {
-    public String toTelegramText(String nameFromUser) {
-        StringBuilder text = new StringBuilder("<b>").append(nameFromUser).append("</b>\n");
+    public String toTelegramText(List<String> namesFromUser) {
+        StringBuilder text = new StringBuilder("<b>");
+        text.append(namesFromUser.get(0));
+        for (int i = 1; i < namesFromUser.size(); ++i) {
+            text.append(", ").append(namesFromUser.get(i));
+        }
+        text.append("</b>\n");
         text.append(type.toTelegramText()).append("\n");
         text.append("Описание: ").append(description).append("\n");
         if (positives != null) {
