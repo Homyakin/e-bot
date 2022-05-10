@@ -23,7 +23,7 @@ public class TelegramSender extends DefaultAbsSender {
 
     public Result send(SendMessage sendMessage) {
         try {
-            logger.info("Sending message with text " + sendMessage.getText() + "; to " + sendMessage.getChatId());
+            logger.info("Sending message to " + sendMessage.getChatId());
             execute(sendMessage);
             return new Result.Success();
         } catch (TelegramApiException e) {

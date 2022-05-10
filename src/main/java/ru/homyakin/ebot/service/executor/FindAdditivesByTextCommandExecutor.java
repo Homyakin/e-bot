@@ -3,6 +3,8 @@ package ru.homyakin.ebot.service.executor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import ru.homyakin.ebot.dao.AdditiveDao;
 import ru.homyakin.ebot.model.Additive;
@@ -17,6 +19,7 @@ import ru.homyakin.ebot.utils.TextUtils;
 @Component
 public class FindAdditivesByTextCommandExecutor extends CommandExecutor {
     private static final int MAX_ITEMS = 16;
+    private static final Logger logger = LoggerFactory.getLogger(FindAdditivesByTextCommandExecutor.class);
     private final AdditiveDao additiveDao;
     private final TelegramSender telegramSender;
 
@@ -29,6 +32,7 @@ public class FindAdditivesByTextCommandExecutor extends CommandExecutor {
     public Result execute(Command command) {
         final var names = CommonUtils.splitTextByDelimiters(command.text());
         final var additives = additiveDao.getAdditivesByName(names, MAX_ITEMS);
+        logger.info("Found " + additives.size() + " additives");
         return TelegramUtils.createSendMessages(createTextFromAdditives(additives, names), command.userId().toString())
             .stream()
             .map(telegramSender::send)
