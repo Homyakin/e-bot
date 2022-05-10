@@ -15,6 +15,7 @@ public record Additive(
     String description,
     String positives,
     String negatives,
+    String recommendations,
     List<Source> sources
 ) {
     public String toTelegramText(List<String> namesFromUser) {
@@ -32,6 +33,9 @@ public record Additive(
         if (negatives != null) {
             text.append("Вред: ").append(negatives).append("\n");
         }
+        if (recommendations != null) {
+            text.append("Рекомендации: ").append(recommendations).append("\n");
+        }
         text.append("Источники: ");
         for (final var source: sources) {
             text.append(source.toTelegramText()).append("; ");
@@ -42,10 +46,14 @@ public record Additive(
 
 enum Type {
     SAFE,
+    UNSAFE,
+    CAUTION,
     ;
     public String toTelegramText() {
         return switch (this) {
             case SAFE -> "Безопасна:white_check_mark:";
+            case UNSAFE -> "Опасна:x:";
+            case CAUTION -> "Требуется осторожность:warning:";
         };
     }
 }
