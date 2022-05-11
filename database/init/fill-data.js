@@ -70,7 +70,7 @@ db.additive.insert(
             "type": "SAFE",
             "description": "Зелёный краситель.",
             "positives": "Освобождает организм от токсинов, повышает защитные функции и препятствует развитию раковых клеток.",
-            "negatives": "В синтезированной добавке возможно наличие примесей, которые могут вызывать аллергические реакции, головную боль или расстройство желудка",
+            "negatives": "В синтезированной добавке возможно наличие примесей, которые могут вызывать аллергические реакции, головную боль или расстройство желудка.",
             "sources": [
                 {
                     "name": "foodandhealth.ru",
@@ -83,11 +83,30 @@ db.additive.insert(
             ]
         },
         {
+            "names": ["е200", "е-200", "e200", "e-200", "сорбиновая кислота"],
+            "type": "SAFE",
+            "description": "Консервант.",
+            "positives": "Способствует повышению иммунитета.",
+            "negatives": "Возможна индивидуальная непереносимость. Длительное потребление продуктов с данной добавкой увеличивает " +
+                "риски появления аллергических реакций на руках и голове.",
+            "recommendations": "Суточная норма - 12,5 мг на килограмм массы тела.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/sorbinovaya-kislota-e200/"
+                },
+                {
+                    "name": "calorizator.ru",
+                    "link": "https://calorizator.ru/addon/e2xx/e200"
+                }
+            ]
+        },
+        {
             "names": ["е202", "е-202", "e202", "e-202", "сорбат калия"],
             "type": "SAFE",
             "description": "Консервант.",
             "negatives": "Иногда может вызывать аллергические реакции, которые выражаются в появлении раздражения на слизистых тканях и кожных покровах.",
-            "recommendations": "Количество добавки не должно превышать 0,2% от массы продукта",
+            "recommendations": "Количество добавки не должно превышать 0,2% от массы продукта.",
             "sources": [
                 {
                     "name": "foodandhealth.ru",
@@ -96,6 +115,24 @@ db.additive.insert(
                 {
                     "name": "vitaminic.ru",
                     "link": "https://vitaminic.ru/pischevye-dobavki/sorbat-kaliya-e202"
+                }
+            ]
+        },
+        {
+            "names": ["е211", "е-211", "e211", "e-211", "бензоат натрия"],
+            "type": "UNSAFE",
+            "description": "Консервант.",
+            "negatives": "От длительного употребления может развиваться цирроз печени, болезнь Паркинсона, почечная недостаточность," +
+                " нейродегенеративные заболевания. Ускоряет процесс старения. Не выводится из организма и может спровоцировать рак.",
+            "recommendations": "Количество добавки не должно превышать 0,2% от массы продукта.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/benzoat-natriya-e211/"
+                },
+                {
+                    "name": "vitaminic.ru",
+                    "link": "https://calorizator.ru/addon/e2xx/e211"
                 }
             ]
         },
@@ -121,6 +158,55 @@ db.additive.insert(
             ]
         },
         {
+            "names": ["е250", "е-250", "e250", "e-250", "нитрит натрия"],
+            "type": "CAUTION",
+            "description": "Консервант.",
+            "positives": "Является сильным антибиотиком.",
+            "negatives": "Способна повысить риск к развитию онкологических заболеваний. Летальная доза - 2-6 грамм.",
+            "recommendations": "Продукты, содержащие витамины групп E и C способны замедлить процесс нитрозирования.\n" +
+                "Норма - не более 50 мг на 1кг продукта. Но лучше выбирать продукты с консервантом E202.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/nitrit-natriya-e250/"
+                },
+                {
+                    "name": "calorizator.ru",
+                    "link": "https://calorizator.ru/addon/e2xx/e220"
+                }
+            ]
+        },
+        {
+            "names": ["е300", "е-300", "e300", "e-300", "аскорбиновая кислота"],
+            "type": "SAFE",
+            "description": "Антиоксидант.",
+            "positives": "помогает превращать холестерин в желчные кислоты, триптофан и катехоламины в серотонин, способствует образованию коллагена, синтезирует кортикостероиды.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/askorbinovaya-kislota-e300/"
+                },
+            ]
+        },
+        {
+            "names": ["е322", "е-322", "e322", "e-322", "лецитин", "соевый лецитин"],
+            "type": "SAFE",
+            "description": "Эмульгатор.",
+            "positives": "Борется с большим показателем холестерина, является средством для профилактики возникновения и развития атеросклероза," +
+                " способствует равномерному усвоению жиров. Улучшает умственную активность, память, поможет побороть депрессию и избавиться от стресса.",
+            "negatives": "Могут возникнуть аллергические реакции при индивидуальной непереносимости.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/lecitin-e322/"
+                },
+                {
+                    "name": "calorizator.ru",
+                    "link": "https://calorizator.ru/addon/e3xx/e322"
+                }
+            ]
+        },
+        {
             "names": ["е330", "е-330", "e330", "e-330", "лимонная кислота"],
             "type": "SAFE",
             "description": "Лимонная кислота.",
@@ -132,7 +218,7 @@ db.additive.insert(
                 },
                 {
                     "name": "calorizator.ru",
-                    "link": "https://calorizator.ru/addon/e2xx/e220"
+                    "link": "https://calorizator.ru/addon/e3xx/e330"
                 }
             ]
         },
@@ -150,6 +236,42 @@ db.additive.insert(
                 {
                     "name": "calorizator.ru",
                     "link": "https://calorizator.ru/addon/e4xx/e412"
+                }
+            ]
+        },
+        {
+            "names": ["е621", "е-621", "e621", "e-621", "глутамат натрия"],
+            "type": "CAUTION",
+            "description": "Усилитель вкуса.",
+            "negatives": "Cистематическое употребление пищи c данной добавкой приводит к головной боли, одышке, повышенному потоотделению," +
+                " покраснению кожных покровов, боли в груди, ухудшению зрения. Существует опасность переедания.",
+            "recommendations": "Норма для взрослого: 10 г/кг веса. Для детей старше трёх лет: 3г/1кг веса." +
+                " Для детей младше трёх лет не рекомендуется к употреблению.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/glutamat-natriya-e621/"
+                },
+                {
+                    "name": "calorizator.ru",
+                    "link": "https://calorizator.ru/addon/e6xx/e621"
+                }
+            ]
+        },
+        {
+            "names": ["е951", "е-951", "e951", "e-951", "аспартам"],
+            "type": "CAUTION",
+            "description": "Подсластитель.",
+            "negatives": "При длительном употреблении возможны аллергические реакции, головные боли, депрессия, мигрень и бессонница.",
+            "recommendations": "Норма употребления - 40 мг/кг веса.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/?s=%D0%95951"
+                },
+                {
+                    "name": "calorizator.ru",
+                    "link": "https://calorizator.ru/addon/e9xx/e951"
                 }
             ]
         }

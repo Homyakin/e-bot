@@ -30,7 +30,8 @@ public class FindAdditivesByTextCommandExecutor extends CommandExecutor {
 
     @Override
     public Result execute(Command command) {
-        final var names = CommonUtils.splitTextByDelimiters(command.text());
+        final var names = CommonUtils.splitTextAndRemoveCommonWords(command.text());
+        logger.info("Searching by: " + names.toString());
         final var additives = additiveDao.getAdditivesByName(names, MAX_ITEMS);
         logger.info("Found " + additives.size() + " additives");
         return TelegramUtils.createSendMessages(createTextFromAdditives(additives, names), command.userId().toString())
