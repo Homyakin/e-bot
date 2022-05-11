@@ -17,7 +17,8 @@ db.additive.insert(
             "type": "SAFE",
             "description": "Жёлтый краситель.",
             "positives": "Нормализуется работа щитовидной железы, репродуктивной функции, регулируются процессы образования клеток крови и антител.",
-            "negatives": "Противопоказаниями являются: гиперчувствительность, нефролитиаз.",
+            "recommendations": "Противопоказаниями являются: гиперчувствительность, нефролитиаз.\n" +
+                "Рекомендованная суточная доза - 0,5 мг на килограмм массы тела",
             "sources": [
                 {
                     "name": "foodandhealth.ru",
@@ -86,6 +87,7 @@ db.additive.insert(
             "type": "SAFE",
             "description": "Консервант.",
             "negatives": "Иногда может вызывать аллергические реакции, которые выражаются в появлении раздражения на слизистых тканях и кожных покровах.",
+            "recommendations": "Количество добавки не должно превышать 0,2% от массы продукта",
             "sources": [
                 {
                     "name": "foodandhealth.ru",
@@ -110,7 +112,23 @@ db.additive.insert(
             "sources": [
                 {
                     "name": "foodandhealth.ru",
-                    "link": "https://foodandhealth.ru/dobavki/dioksid-sery-e220/F"
+                    "link": "https://foodandhealth.ru/dobavki/dioksid-sery-e220/"
+                },
+                {
+                    "name": "calorizator.ru",
+                    "link": "https://calorizator.ru/addon/e2xx/e220"
+                }
+            ]
+        },
+        {
+            "names": ["е330", "е-330", "e330", "e-330", "лимонная кислота"],
+            "type": "SAFE",
+            "description": "Лимонная кислота.",
+            "positives": "Замедляет процессы старения, оказывает положительное влияние на состояние кожных покровов.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/limonnaya-kislota-e330/"
                 },
                 {
                     "name": "calorizator.ru",
