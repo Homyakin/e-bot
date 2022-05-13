@@ -37,7 +37,7 @@ public class CommandProcessor {
             .map(commandExecutor -> commandExecutor.execute(command))
             .ifPresent(it -> {
                 if (it instanceof Result.Error error) {
-                    telegramSender.send(TelegramUtils.createSendMessageWithMaxLength(error.info(), adminId));
+                    telegramSender.send(TelegramUtils.createSendMessageWithMaxLength(error.info(), adminId, null));
                 }
             });
     }

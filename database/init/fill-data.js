@@ -66,6 +66,23 @@ db.additive.insert(
             ]
         },
         {
+            "names": ["е120", "е-120", "e120", "e-120", "кармины", "кармин", "кошениль", "карминовая кислота"],
+            "type": "SAFE",
+            "description": "Красный краситель.",
+            "negatives": "Может вызывать аллергические реакции",
+            "recommendations": "Стоит ограничить употребление детям и пожилым людям",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/karminy-e120/"
+                },
+                {
+                    "name": "calorizator.ru",
+                    "link": "https://calorizator.ru/addon/e1xx/e120"
+                }
+            ]
+        },
+        {
             "names": ["е140", "е-140", "e140", "e-140", "хлорофилл", "хлофиллин", "хлорофиллы", "хлорофиллины"],
             "type": "SAFE",
             "description": "Зелёный краситель.",
@@ -158,6 +175,36 @@ db.additive.insert(
             ]
         },
         {
+            "names": ["е221", "е-221", "e221", "e-221", "сульфит натрия"],
+            "type": "CAUTION",
+            "description": "Консервант.",
+            "negatives": "Способна вызывать расстройство желудка, приступы астмы. При злоупотреблении разрушает витамины" +
+                " E и B1.",
+            "recommendations": "Суточная норма - 0,7 мг на кг массы тела. В детском возрасте употреблять не рекомендуется.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/sulfit-natriya-e221/"
+                }
+            ]
+        },
+        {
+            "names": ["е242", "е-242", "e242", "e-242", "диметилдикарбонат"],
+            "type": "SAFE",
+            "description": "Консервант.",
+            "recommendations": "Норма употребления - 250г на 1 литр продукта",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/dimetildikarbonat-e242/"
+                },
+                {
+                    "name": "calorizator.ru",
+                    "link": "https://calorizator.ru/addon/e2xx/e242"
+                }
+            ]
+        },
+        {
             "names": ["е250", "е-250", "e250", "e-250", "нитрит натрия"],
             "type": "CAUTION",
             "description": "Консервант.",
@@ -223,6 +270,25 @@ db.additive.insert(
             ]
         },
         {
+            "names": ["е331", "е-331", "e331", "e-331", "цитрат натрия", "цитрат натрия однозамещенный",
+                "цитрат натрия двузамещенный", "цитрат натрия трехзамещенный", "цитрат натрия 3-замещенный", "цитрат натрия 2-замещенный"],
+            "type": "SAFE",
+            "description": "Стабилизатор.",
+            "negatives": "При нарушении кислотно-щелочного баланса могут возникнуть нарушение пищеварения, головные боли и другие симптомы.",
+            "recommendations": "Добавка является кислотой, поэтому важно соблюдать кислотно-щелочной баланс продуктов." +
+                " Доля щелочных продуктов должна составлять ~75% в рационе.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/citrat-natriya-e331/"
+                },
+                {
+                    "name": "calorizator.ru",
+                    "link": "https://calorizator.ru/addon/e3xx/e331"
+                }
+            ]
+        },
+        {
             "names": ["е412", "е-412", "e412", "e-412", "гуаровая камедь", "гуаровая смола", "камедь гуарового дерева"],
             "type": "SAFE",
             "description": "Загуститель.",
@@ -240,12 +306,79 @@ db.additive.insert(
             ]
         },
         {
-            "names": ["е621", "е-621", "e621", "e-621", "глутамат натрия"],
+            "names": ["е450", "е-450", "e450", "e-450", "пирофосфаты", "дифосфаты", "пирофосфат динатрия", "пирофосфат тринатрия",
+                "пирофосфат тетранатрия", "пирофосфат дикалия", "пирофосфат тетракалия", "пирофосфат дикальция",
+                "дигидропирофосфат кальция", "пирофосфат димагния", "пирофосфат натрия"],
+            "type": "CAUTION",
+            "description": "Регулятор кислотности.",
+            "negatives": "Может спровоцировать аллергические реакции, повышение давления, нарушения пищеварительной системы." +
+                " Регулярное употребление влечёт ухудшение усвоения фосфора, железа и кальция.",
+            "recommendations": "Норма - 70 мг на 1 кг продукта.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/pirofosfaty-e450/"
+                },
+                {
+                    "name": "calorizator.ru",
+                    "link": "https://calorizator.ru/addon/e4xx/e450"
+                }
+            ]
+        },
+        {
+            "names": ["е450i", "е-450i", "e450i", "e-450i", "дигидропирофосфат натрия"],
+            "type": "SAFE",
+            "description": "Регулятор кислотности.",
+            "recommendations": "Норма - 500 мг на 1 кг продукта.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/digidropirofosfat-natriya-e450i/"
+                },
+                {
+                    "name": "dobavkam.net",
+                    "link": "https://dobavkam.net/additives/e450i"
+                }
+            ]
+        },
+        {
+            "names": ["е503", "е-503", "e503", "e-503", "карбонат аммония", "бикарбонат аммония", "гидрокарбонат аммония",
+                "углекислый аммоний", "соль углеаммонийная", "аммониевая соль угольной кислоты"],
+            "type": "SAFE",
+            "description": "Эмульгатор.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/karbonaty-ammoniya-e503/"
+                },
+                {
+                    "name": "vkusologia.ru",
+                    "link": "https://vkusologia.ru/dobavki/stabilizatory-emulgatory/e503.html"
+                }
+            ]
+        },
+        {
+            "names": ["е508", "е-508", "e508", "e-508", "хлорид калия", "калий хлористый", "калиевая соль соляной кислоты"],
+            "type": "SAFE",
+            "description": "Загуститель.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/hlorid-kaliya-e508/"
+                },
+                {
+                    "name": "medum.ru",
+                    "link": "https://medum.ru/e508"
+                }
+            ]
+        },
+        {
+            "names": ["е621", "е-621", "e621", "e-621", "глутамат натрия", "глутамат натрия 1-замещенный"],
             "type": "CAUTION",
             "description": "Усилитель вкуса.",
             "negatives": "Cистематическое употребление пищи c данной добавкой приводит к головной боли, одышке, повышенному потоотделению," +
                 " покраснению кожных покровов, боли в груди, ухудшению зрения. Существует опасность переедания.",
-            "recommendations": "Норма для взрослого: 10 г/кг веса. Для детей старше трёх лет: 3г/1кг веса." +
+            "recommendations": "Норма для взрослого: 10 г/кг массы тела. Для детей старше трёх лет: 3г/кг массы тела." +
                 " Для детей младше трёх лет не рекомендуется к употреблению.",
             "sources": [
                 {
@@ -259,19 +392,84 @@ db.additive.insert(
             ]
         },
         {
+            "names": ["е627", "е-627", "e627", "e-627", "двунатриевый гуанилат", "5'-гуанилат натрия 2-замещенный"],
+            "type": "CAUTION",
+            "description": "Усилитель вкуса.",
+            "negatives": "Является сильным алергеном. Вызывает прогрессирование подагры. Может стать причиной гипертонии," +
+                "отёка Квинке. Вызывает несварение, метеоризм, диарею, спазмы.",
+            "recommendations": "Нельзя употреблять детям. Суммарное количество усилителей вкуса не должно превышать 500 мг" +
+                " на кг продукта.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/dvunatrieviy-guanilat-e627/"
+                },
+                {
+                    "name": "ruslekar.info",
+                    "link": "http://ruslekar.info/E627-5-Guanilat-natriya-dvuzameshchenniy-1630.html"
+                }
+            ]
+        },
+        {
+            "names": ["е631", "е-631", "e631", "e-631", "инозинат натрия", "5'-инозинат натрия 2-замещенный"],
+            "type": "CAUTION",
+            "description": "Усилитель вкуса.",
+            "negatives": "При злоупотреблении может вызвать проблемы с пищеварением. Может повышать артериальное давление.",
+            "recommendations": "Норма - 3г в день. Не рекомендуется употреблять детям, беременный, а также при астме, падагре и ревматизме.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/inozinat-natriya-e631/"
+                },
+                {
+                    "name": "medum.ru",
+                    "link": "https://medum.ru/e631"
+                }
+            ]
+        },
+        {
             "names": ["е951", "е-951", "e951", "e-951", "аспартам"],
             "type": "CAUTION",
             "description": "Подсластитель.",
             "negatives": "При длительном употреблении возможны аллергические реакции, головные боли, депрессия, мигрень и бессонница.",
-            "recommendations": "Норма употребления - 40 мг/кг веса.",
+            "recommendations": "Норма - 40 мг/кг массы тела.",
             "sources": [
                 {
                     "name": "foodandhealth.ru",
-                    "link": "https://foodandhealth.ru/?s=%D0%95951"
+                    "link": "https://foodandhealth.ru/dobavki/aspartam-e951/"
                 },
                 {
                     "name": "calorizator.ru",
                     "link": "https://calorizator.ru/addon/e9xx/e951"
+                }
+            ]
+        },
+        {
+            "names": ["е1442", "е-1442", "e1442", "e-1442", "дикрахмалфосфат оксипропилированный сшитый", "гидроксипропилдикрахмалфосфат",
+                "оксипропилированный дикрахмалфосфат"],
+            "type": "SAFE",
+            "description": "Стабилизатор.",
+            "negatives": "При злоупотреблении может вызвать проблемы с пищеварением.",
+            "recommendations": "Норма - 60 г/кг массы продукта.",
+            "sources": [
+                {
+                    "name": "vitaminic.ru",
+                    "link": "https://vitaminic.ru/pischevye-dobavki/dobavka-e1442"
+                },
+                {
+                    "name": "vkusologia.ru",
+                    "link": "https://vkusologia.ru/dobavki/prochie/e-1442.html"
+                }
+            ]
+        },
+        {
+            "names": ["гидрокарбонат натрия"],
+            "type": "SAFE",
+            "description": "Пищевая сода.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/komponenty-pitaniya/soda/"
                 }
             ]
         }

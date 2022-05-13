@@ -30,16 +30,22 @@ public class FindAdditivesByTextCommandExecutor extends CommandExecutor {
 
     @Override
     public Result execute(Command command) {
-        final var names = CommonUtils.splitTextAndRemoveCommonWords(command.text());
+        final var names = CommonUtils.splitTextByDelimiters(CommonUtils.standardizeText(command.text()));
         logger.info("Searching by: " + names.toString());
-        final var additives = additiveDao.getAdditivesByName(names, MAX_ITEMS);
-        logger.info("Found " + additives.size() + " additives");
-        return TelegramUtils.createSendMessages(createTextFromAdditives(additives, names), command.userId().toString())
-            .stream()
-            .map(telegramSender::send)
-            .filter(result -> !(result instanceof Result.Success))
-            .findFirst()
-            .orElseGet(Result.Success::new);
+        try {
+            final var additives = additiveDao.getAdditivesByName(names, MAX_ITEMS);
+            logger.info("Found " + additives.size() + " additives");
+            return TelegramUtils.createSendMessages(createTextFromAdditives(additives, names), command.userId().toString())
+                .stream()
+                .map(telegramSender::send)
+                .filter(result -> !(result instanceof Result.Success))
+                .findFirst()
+                .orElseGet(Result.Success::new);
+        } catch (Exception e) {
+            logger.error("Unexpected error", e);
+            telegramSender.send(TelegramUtils.createSendMessageWithMaxLength(TextUtils.errorText(), command.userId().toString()));
+            return new Result.Error(CommonUtils.getStringStackTrace(e));
+        }
     }
 
     @Override

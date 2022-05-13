@@ -28,12 +28,16 @@ public class TelegramUtils {
     }
 
     public static SendMessage createSendMessageWithMaxLength(String text, String chatId) {
+        return createSendMessageWithMaxLength(text, chatId, ParseMode.HTML);
+    }
+
+    public static SendMessage createSendMessageWithMaxLength(String text, String chatId, String parseMode) {
         return SendMessage
             .builder()
             .chatId(chatId)
             .text(substringToTelegramLength(EmojiParser.parseToUnicode(text)))
             .disableWebPagePreview(true)
-            .parseMode(ParseMode.HTML)
+            .parseMode(parseMode)
             .build();
     }
 

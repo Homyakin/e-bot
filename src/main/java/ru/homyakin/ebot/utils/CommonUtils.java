@@ -4,7 +4,6 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -15,23 +14,14 @@ public class CommonUtils {
         return sw.toString();
     }
 
-    public static Set<String> splitTextAndRemoveCommonWords(String text) {
-        return splitTextByDelimiters(
-            text
-                .toLowerCase()
-                .replace("состав", "")
-                .replace("эмульгатор", "")
-                .replace("консервант", "")
-                .replace("окислитель", "")
-                .replace("загуститель", "")
-                .replace("усилитель вкуса и аромата", "")
-                .replace("усилитель вкуса", "")
-                .replace("фиксатор окраски", "")
-        );
+    public static String standardizeText(String text) {
+        return text
+            .toLowerCase()
+            .replace("ё", "е");
     }
 
     public static Set<String> splitTextByDelimiters(String text) {
-        return Arrays.stream(text.split(":|,|\\.|\\(|\\)|;|\n"))
+        return Arrays.stream(text.split(delimiterRegexp))
             .filter(it -> !it.isBlank())
             .map(String::trim)
             .collect(Collectors.toSet());
@@ -44,4 +34,28 @@ public class CommonUtils {
         }
         return text.toString();
     }
+
+    private static String delimiterRegexp = String.join(
+        "|",
+        ":",
+        ",",
+        "\\.",
+        "\\(",
+        "\\)",
+        ";",
+        "\n",
+        " - ",
+        " – ",
+        "антиокислитель",
+        "окислитель",
+        "усилитель вкуса и аромата",
+        "усилитель вкуса",
+        "фиксатор окраски",
+        "загуститель",
+        "консервант",
+        "эмульгатор",
+        "состав",
+        " и ",
+        "краситель"
+    );
 }
