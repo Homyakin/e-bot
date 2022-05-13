@@ -17,7 +17,8 @@ public class CommonUtils {
     public static String standardizeText(String text) {
         return text
             .toLowerCase()
-            .replace("ё", "е");
+            .replace("ё", "е")
+            .replaceAll("[ ]?\\(([i]*)\\)", "$1");
     }
 
     public static Set<String> splitTextByDelimiters(String text) {
