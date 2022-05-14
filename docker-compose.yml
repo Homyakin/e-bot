@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  e-bot:
+    build: ./
+    network_mode: host
+    depends_on:
+      - e-base
+  e-base:
+    build: database/
+    ports:
+    - 27017:27017
+
+
