@@ -49,6 +49,7 @@ public class TelegramUpdateReceiver implements LongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
+        logger.debug("New update: " + update.toString());
         if (TelegramUtils.isProcessingUpdate(update)) {
             final var message = update.getMessage();
             logger.info("New update: " + TelegramUtils.getTextForLog(message));

@@ -5,6 +5,18 @@ public sealed abstract class Result {
 
     }
 
+    public static final class NextCommand extends Result {
+        private final Command command;
+
+        public NextCommand(Command command) {
+            this.command = command;
+        }
+
+        public Command command() {
+            return command;
+        }
+    }
+
     public static final class Error extends Result {
         private final String info;
 

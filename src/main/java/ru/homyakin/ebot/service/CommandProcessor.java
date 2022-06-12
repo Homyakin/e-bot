@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import ru.homyakin.ebot.config.TelegramBotConfig;
 import ru.homyakin.ebot.model.Command;
@@ -15,6 +17,7 @@ import ru.homyakin.ebot.utils.TelegramUtils;
 
 @Service
 public class CommandProcessor {
+    private static final Logger logger = LoggerFactory.getLogger(CommandProcessor.class);
     private final Map<CommandType, CommandExecutor> executorMap;
     private final String adminId;
     private final TelegramSender telegramSender;
@@ -33,12 +36,19 @@ public class CommandProcessor {
     }
 
     public void processCommand(Command command) {
-        Optional.ofNullable(executorMap.get(command.commandType()))
-            .map(commandExecutor -> commandExecutor.execute(command))
-            .ifPresent(it -> {
-                if (it instanceof Result.Error error) {
-                    telegramSender.send(TelegramUtils.createSendMessageWithMaxLength(error.info(), adminId, null));
-                }
-            });
+        while (command != null) {
+            final var executor = Optional.ofNullable(executorMap.get(command.commandType()));
+            if (executor.isEmpty()) {
+                logger.error("Unknown command");
+                return;
+            }
+            final var result = executor.get().execute(command);
+            command = null;
+            if (result instanceof Result.Error error) {
+                telegramSender.send(TelegramUtils.createSendMessageWithMaxLength(error.info(), adminId, null));
+            } else if (result instanceof Result.NextCommand nextCommand) {
+                command = nextCommand.command();
+            }
+        }
     }
 }

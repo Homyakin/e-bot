@@ -5,6 +5,7 @@ import java.io.StringWriter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class CommonUtils {
@@ -15,10 +16,18 @@ public class CommonUtils {
     }
 
     public static String standardizeText(String text) {
-        return text
+        var temp = text
             .toLowerCase()
             .replace("ё", "е")
-            .replaceAll("[ ]?\\(([i]*)\\)", "$1");
+            .replaceAll(" ?\\((i*)\\)", "$1"); // стандартизруем паттерн с i (например е331iii);
+        // тут латинская и кириллическая 'е'
+        // заменяем букву 'з' в ешках на 3
+        final var matcher = threePattern.matcher(temp);
+        while (matcher.find()) {
+            temp = temp.replaceAll(matcher.group(0), matcher.group(1) + "3".repeat(matcher.group(2).length()) + matcher.group(3));
+        }
+        return temp
+            .replaceAll("([e|е]\\d+)", ",$1,"); // выделяем ешки напрямую запятыми
     }
 
     public static Set<String> splitTextByDelimiters(String text) {
@@ -36,7 +45,7 @@ public class CommonUtils {
         return text.toString();
     }
 
-    private static String delimiterRegexp = String.join(
+    private static final String delimiterRegexp = String.join(
         "|",
         ":",
         ",",
@@ -59,4 +68,6 @@ public class CommonUtils {
         " и ",
         "краситель"
     );
+
+    private static final Pattern threePattern = Pattern.compile("([e|е]\\d*)(з+)(\\d+)");
 }

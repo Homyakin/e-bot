@@ -44,4 +44,12 @@ public class TextUtils {
             Например: /request сорбат калия.
             """;
     }
+
+    public static String parsedText(String text) {
+        return
+            """
+            Текст на вашей фотографии распознан следующим образом:
+            %s
+            """.formatted(text);
+    }
 }

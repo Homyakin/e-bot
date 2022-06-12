@@ -12,7 +12,8 @@ public class TelegramUtils {
     private final static int MAX_TELEGRAM_MESSAGE = 4000;
 
     public static boolean isProcessingUpdate(Update update) {
-        return update.hasMessage() && update.getMessage().isUserMessage() && update.getMessage().hasText();
+        return update.hasMessage() && update.getMessage().isUserMessage()
+            && (update.getMessage().hasText() || update.getMessage().hasPhoto());
     }
 
     public static List<SendMessage> createSendMessages(String text, String chatId) {
@@ -42,12 +43,13 @@ public class TelegramUtils {
     }
 
     public static String getTextForLog(Message message) {
-        return "(userId: %d; firstName: %s, lastName: %s, username: %s, text: %s)".formatted(
+        return "(userId: %d; firstName: %s, lastName: %s, username: %s, text: %s, photo: %s)".formatted(
             message.getFrom().getId(),
             message.getFrom().getFirstName(),
             message.getFrom().getLastName(),
             message.getFrom().getUserName(),
-            message.getText()
+            message.getText(),
+            String.valueOf(message.hasPhoto())
         );
     }
 
