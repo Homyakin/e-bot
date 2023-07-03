@@ -508,6 +508,71 @@ db.additive.insert(
                     "link": "https://foodandhealth.ru/komponenty-pitaniya/soda/"
                 }
             ]
+        },
+        {
+            "names": ["е551", "е-551", "e551", "e-551", "диоксид кремния"],
+            "type": "SAFE",
+            "description": "Эмульгатор. Стабилизатор.",
+            "recommendations": "Содержание в готовом продукте не превышает лимита, т.е. 30 гр/кг",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/dioksid-kremniya-e551/"
+                },
+                {
+                    "name": "calorizator.ru",
+                    "link": "https://calorizator.ru/addon/e5xx/e551"
+                }
+            ]
+        },
+        {
+            "names": ["е451", "е-451", "e451", "e-451", "трифосфат", "трифосфаты", "триполифосфат"],
+            "type": "CAUTION",
+            "description": "Стабилизатор.",
+            "negatives": "Не выводится из организма. Нарушение усваимости кальция, развитие остеопороза. Негативно влияет на нервную систему",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/trifosfaty-e451/"
+                },
+                {
+                    "name": "dobavkam.net",
+                    "link": "https://dobavkam.net/additives/e451"
+                }
+            ]
+        },
+        {
+            "names": ["е301", "е-301", "e301", "e-301", "аскорбат натрия"],
+            "type": "SAFE",
+            "description": "Разновидность витамина С. Антиоксидант.",
+            "positives": "Препятствует развитию атеросклероза, помогает уменьшить риск сердечных заболеваний. ",
+            "recommendations": "Не более 15 мг на 1 кг веса человека",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/askorbat-natriya-e301/"
+                },
+                {
+                    "name": "dobavkam.net",
+                    "link": "https://dobavkam.net/additives/e301"
+                }
+            ]
+        },
+        {
+            "names": ["е1422", "е-1422", "e1422", "e-1422", "дикрахмаладипат ацетилированный"],
+            "type": "SAFE",
+            "description": "Загуститель. Получают из крахмала.",
+            "negatives": "При злоупотреблении может спровоцировать вздутие живота, диарею возникновение панкреонекроза.",
+            "sources": [
+                {
+                    "name": "calorizator.ru",
+                    "link": "https://calorizator.ru/addon/e10xx/e1422"
+                },
+                {
+                    "name": "dobavkam.net",
+                    "link": "https://dobavkam.net/additives/e1422"
+                }
+            ]
         }
     ]
 )
