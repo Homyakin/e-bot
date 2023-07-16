@@ -582,11 +582,100 @@ db.additive.insert(
             "sources": [
                 {
                     "name": "calorizator.ru",
-                    "link": "https://calorizator.ru/addon/e10xx/e1422"
+                    "link": "https://calorizator.ru/addon/e4xx/e476"
                 },
                 {
                     "name": "dobavkam.net",
                     "link": "https://dobavkam.net/additives/e476"
+                }
+            ]
+        },
+        {
+            "names": ["е536", "е-536", "e536", "e-536", "ферроцианид калия"],
+            "type": "CAUTION",
+            "description": "Эмульгатор.",
+            "negatives": "Может спровоцировать проблемы с кожей, нарушение деятельности желчного пузыря, печени, , желудочно-кишечного тракта, лимфоузлов.",
+            "recommendations": "Не более 20 мг на 1 кг продукта",
+            "sources": [
+                {
+                    "name": "calorizator.ru",
+                    "link": "https://calorizator.ru/addon/e5xx/e536"
+                },
+                {
+                    "name": "dobavkam.net",
+                    "link": "https://dobavkam.net/additives/e536"
+                }
+            ]
+        },
+        {
+            "names": ["е501", "е-501", "e501", "e-501", "е501i", "е-501i", "e501i", "e-501i",
+                "карбонаты калия", "карбонат калия"],
+            "type": "SAFE",
+            "description": "Разрыхлитель. Регулятор кислотности. Стабилизатор. Старинное название - поташ.",
+            "positives": "Источник восполнения калия в организме",
+            "negatives": "Переизбыток может спровоцировать развитие гиперкалиемии.",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/karbonaty-kaliya-e501/"
+                },
+                {
+                    "name": "dobavkam.net",
+                    "link": "https://dobavkam.net/additives/e501"
+                }
+            ]
+        },
+        {
+            "names": ["е501", "е-501", "e501", "e-501", "е501i", "е-501i", "e501i", "e-501i",
+                "карбонаты калия", "карбонат калия"],
+            "type": "SAFE",
+            "description": "Разрыхлитель. Регулятор кислотности. Стабилизатор. Старинное название - поташ.",
+            "positives": "Источник восполнения калия в организме",
+            "negatives": "Переизбыток может спровоцировать развитие гиперкалиемии.",
+            "recommendations": "Не более 20 мг на 1 кг продукта",
+            "sources": [
+                {
+                    "name": "foodandhealth.ru",
+                    "link": "https://foodandhealth.ru/dobavki/karbonaty-kaliya-e501/"
+                },
+                {
+                    "name": "dobavkam.net",
+                    "link": "https://dobavkam.net/additives/e501"
+                }
+            ]
+        },
+        {
+            "names": ["е452", "е-452", "e452", "e-452", "е452i", "е-452i", "e452i", "e-452i",
+                "полифосфаты", "полифосфат натрия"],
+            "type": "SAFE",
+            "description": "Полимеры фосфорной кислоты",
+            "recommendations": "Не более 70мг на 1 кг веса человека",
+            "sources": [
+                {
+                    "name": "vitaminic.ru",
+                    "link": "https://vitaminic.ru/blog/pischevye-dobavki/e452-polifosfat-natriya/"
+                },
+                {
+                    "name": "dobavkam.net",
+                    "link": "https://dobavkam.net/additives/e452"
+                }
+            ]
+        },
+        {
+            "names": ["е150с", "е-150с", "e150c", "e-150c", "сахарный колер 3", "сахарный колер iii"],
+            "type": "SAFE",
+            "description": "Краситель",
+            "positives": "Обладает радиопротекторными качествами и защищают организм от лучевого поражения",
+            "negatives": "Может вызвать нарушения и заболевания желудочно-кишечного тракта при превышении предельно допустимой суточной дозы",
+            "recommendations": "Не более 150мг на 1 кг веса человека",
+            "sources": [
+                {
+                    "name": "calorizator.ru",
+                    "link": "https://calorizator.ru/addon/e1xx/e150c"
+                },
+                {
+                    "name": "dobavkam.net",
+                    "link": "https://dobavkam.net/additives/e150c"
                 }
             ]
         }
