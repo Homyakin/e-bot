@@ -19,15 +19,19 @@ public class CommonUtils {
         var temp = text
             .toLowerCase()
             .replace("ё", "е")
-            .replaceAll(" ?\\((i*)\\)", "$1"); // стандартизруем паттерн с i (например е331iii);
-        // тут латинская и кириллическая 'е'
+                // стандартизруем паттерн с i (например e331(iii) -> е331iii)
+            .replaceAll(" ?\\((i*)\\)", "$1")
+                // заменяем в ешках кириллическую 'e' на латиницу
+            .replaceAll("[%s|%s](\\d+)".formatted(LATIN_E, CYRILLIC_E), LATIN_E + "$1")
+                // заменяем в ешках кириллическую 'с' на латиницу
+            .replaceAll("(e\\d+)[%s|%s]".formatted(LATIN_C, CYRILLIC_C), "$1" + LATIN_C);
         // заменяем букву 'з' в ешках на 3
         final var matcher = threePattern.matcher(temp);
         while (matcher.find()) {
             temp = temp.replaceAll(matcher.group(0), matcher.group(1) + "3".repeat(matcher.group(2).length()) + matcher.group(3));
         }
         return temp
-            .replaceAll("([e|е]\\d+)", ",$1,"); // выделяем ешки напрямую запятыми
+            .replaceAll("(e\\d+[i|c]*)", ",$1,"); // выделяем ешки напрямую запятыми
     }
 
     public static Set<String> splitTextByDelimiters(String text) {
@@ -70,4 +74,8 @@ public class CommonUtils {
     );
 
     private static final Pattern threePattern = Pattern.compile("([e|е]\\d*)(з+)(\\d+)");
+    private static final String LATIN_C = "c";
+    private static final String LATIN_E = "e";
+    private static final String CYRILLIC_C = "с";
+    private static final String CYRILLIC_E = "е";
 }

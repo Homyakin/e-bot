@@ -30,7 +30,8 @@ public class TelegramUpdateReceiver implements LongPollingBot {
         TelegramBotConfig config,
         DefaultBotOptions botOptions,
         CommandParser commandParser,
-        CommandProcessor commandProcessor) {
+        CommandProcessor commandProcessor
+    ) {
         this.config = config;
         this.botOptions = botOptions;
         this.commandParser = commandParser;
