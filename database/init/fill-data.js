@@ -626,25 +626,6 @@ db.additive.insert(
             ]
         },
         {
-            "names": ["е501", "е-501", "e501", "e-501", "е501i", "е-501i", "e501i", "e-501i",
-                "карбонаты калия", "карбонат калия"],
-            "type": "SAFE",
-            "description": "Разрыхлитель. Регулятор кислотности. Стабилизатор. Старинное название - поташ.",
-            "positives": "Источник восполнения калия в организме",
-            "negatives": "Переизбыток может спровоцировать развитие гиперкалиемии.",
-            "recommendations": "Не более 20 мг на 1 кг продукта",
-            "sources": [
-                {
-                    "name": "foodandhealth.ru",
-                    "link": "https://foodandhealth.ru/dobavki/karbonaty-kaliya-e501/"
-                },
-                {
-                    "name": "dobavkam.net",
-                    "link": "https://dobavkam.net/additives/e501"
-                }
-            ]
-        },
-        {
             "names": ["е452", "е-452", "e452", "e-452", "е452i", "е-452i", "e452i", "e-452i",
                 "полифосфаты", "полифосфат натрия"],
             "type": "SAFE",
